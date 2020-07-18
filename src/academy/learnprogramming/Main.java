@@ -7,8 +7,10 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int number;
-        System.out.print("How many number : ");
-        number = scanner.nextInt();
+        do {
+            System.out.print("How many number : ");
+            number = scanner.nextInt();
+        } while (number < 1);
 
         System.out.println("----------------------------");
 
