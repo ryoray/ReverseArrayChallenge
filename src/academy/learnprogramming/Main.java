@@ -36,14 +36,13 @@ public class Main {
     }
 
     private static int[] reverse(int[] array) {
-        int[] arrayToReverse = array;
-        int[] arrayReversed = new int[arrayToReverse.length];
+        int[] arrayReversed = new int[array.length];
 
-        arrayReversed[0] = arrayToReverse[arrayToReverse.length-1];
+        arrayReversed[0] = array[array.length-1];
 
-        for (int i=1; i<arrayToReverse.length; i++ ) {
-            int element = arrayToReverse.length-(i+1);
-            arrayReversed[i] = arrayToReverse[element];
+        for (int i=1; i<array.length; i++ ) {
+            int element = array.length-(i+1);
+            arrayReversed[i] = array[element];
         }
         return arrayReversed;
     }
