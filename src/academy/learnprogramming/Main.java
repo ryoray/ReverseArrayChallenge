@@ -12,7 +12,7 @@ public class Main {
             number = scanner.nextInt();
         } while (number < 1);
 
-        System.out.println("----------------------------");
+        System.out.println("--------Input Number--------");
 
         int[] array = new int[number];
         for (int i=0; i<array.length; i++) {
@@ -21,7 +21,7 @@ public class Main {
             array[i] = input;
         }
 
-        System.out.println("----------------------------");
+        System.out.println("------Original sequence-----");
 
         for (int i=0; i<array.length; i++) {
             System.out.println("Element["+ i + "] = " + array[i]);
@@ -29,12 +29,19 @@ public class Main {
 
         int[] reversedArray = reverse(array);
 
-        System.out.println("----------------------------");
+        System.out.println("--------First Method--------");
+        for (int i=0; i<reversedArray.length; i++) {
+            System.out.println("Element[" + i + "] = " + reversedArray[i]);
+        }
+
+        reversedArray = anotherReverse(array);
+        System.out.println("-------Second Method--------");
         for (int i=0; i<reversedArray.length; i++) {
             System.out.println("Element[" + i + "] = " + reversedArray[i]);
         }
     }
 
+    //First solution
     private static int[] reverse(int[] array) {
         int[] arrayReversed = new int[array.length];
 
@@ -45,5 +52,20 @@ public class Main {
             arrayReversed[i] = array[element];
         }
         return arrayReversed;
+    }
+
+    //Another solution
+    private static int[] anotherReverse(int[] array) {
+        int maxIndex = array.length-1;
+        int halfLength = array.length / 2;
+        int temp;
+
+        for (int i=0; i<halfLength; i++) {
+            temp = array[i];
+            array[i] = array[maxIndex - i];
+            array[maxIndex - i] = temp;
+        }
+
+        return array;
     }
 }
