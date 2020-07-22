@@ -39,6 +39,9 @@ public class Main {
         for (int i=0; i<reversedArray.length; i++) {
             System.out.println("Element[" + i + "] = " + reversedArray[i]);
         }
+
+        minValue(reversedArray);
+        maxValue(reversedArray);
     }
 
     //First solution
@@ -67,5 +70,31 @@ public class Main {
         }
 
         return array;
+    }
+
+    private static void minValue(int[] array) {
+        int minimum = Integer.MAX_VALUE;
+
+        for (int i=0; i<array.length; i++) {
+            if (minimum > array[i]) {
+                minimum = array[i];
+            }
+        }
+
+        System.out.println("-------Minimum Number-------");
+        System.out.println("Minimum number is " + minimum);
+    }
+
+    private static void maxValue(int[] array) {
+        int minimum = Integer.MIN_VALUE;
+
+        for (int i=0; i<array.length; i++) {
+            if (minimum < array[i]) {
+                minimum = array[i];
+            }
+        }
+
+        System.out.println("-------Maximum Number-------");
+        System.out.println("Maximum number is " + minimum);
     }
 }
